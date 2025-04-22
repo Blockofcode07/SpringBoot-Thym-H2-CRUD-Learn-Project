@@ -12,7 +12,9 @@
 	<artifactId>sprithyme</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sprithyme</name>
-	<description>In this project, we are building a full-stack web application called Student Repository Management System using Spring Boot and Thymeleaf. This application will help manage student records by performing basic CRUD operations (Create, Read, Update, Delete).</description>
+	<description>In this project, we are building a full-stack web application called Student Repository Management System 
+	using Spring Boot and Thymeleaf. This application will help manage student records by performing basic CRUD operations 
+	(Create, Read, Update, Delete).</description>
 	<url/>
 	<licenses>
 		<license/>
