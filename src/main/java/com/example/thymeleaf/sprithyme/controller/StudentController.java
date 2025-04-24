@@ -36,7 +36,7 @@ public class StudentController {
 
     @GetMapping("/new")
     public ModelAndView showCreateForm(){
-        return new ModelAndView("new-studen").addObject("student", new CreateStudentDTO())
+        return new ModelAndView("new-studen").addObject("student", new CreateStudentDTO());
     }
 
     @PostMapping("/new")
