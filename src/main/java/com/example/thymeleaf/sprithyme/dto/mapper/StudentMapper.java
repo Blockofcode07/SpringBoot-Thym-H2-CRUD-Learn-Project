@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class StudentMapper {
     
     public static Student toEntity(CreateStudentDTO dto){
-        Student student  = new Student()
+        Student student  = new Student();
         student.setName(dto.getName());
         student.setEmail(dto.getEmail());
         student.setBirthday(dto.getBirthday());
