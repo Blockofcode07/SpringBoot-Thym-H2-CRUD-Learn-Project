@@ -9,5 +9,4 @@ public class SprithymeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SprithymeApplication.class, args);
 	}
-
 }

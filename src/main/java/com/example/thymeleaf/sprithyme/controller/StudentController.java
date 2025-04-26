@@ -2,6 +2,7 @@ package com.example.thymeleaf.sprithyme.controller;
 
 import java.util.List;
 
+import com.example.thymeleaf.sprithyme.dto.UpdateStudentDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import com.example.thymeleaf.sprithyme.service.StudentService;
 
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+
 @Controller
 @AllArgsConstructor
 @RequestMapping("/students")
@@ -31,12 +33,12 @@ public class StudentController {
     @GetMapping
     public ModelAndView showStudents() {
         List<StudentResponseDTO> students = StudentMapper.toDTO(this.studentRepository.findAll());
-        return new ModelAndView("students").addObject("students", students);        
+        return new ModelAndView("students").addObject("students", students);
     }
 
     @GetMapping("/new")
-    public ModelAndView showCreateForm(){
-        return new ModelAndView("new-studen").addObject("student", new CreateStudentDTO());
+    public ModelAndView showCreateForm() {
+        return new ModelAndView("new-student").addObject("student", new CreateStudentDTO());
     }
 
     @PostMapping("/new")
@@ -68,5 +70,11 @@ public class StudentController {
         return "redirect:/students";
     }
 
+    @GetMapping("/{id}/delete")
+    public String delete(@PathVariable String id, RedirectAttributes attributes) {
+        this.studentService.deleteById(id);
+        attributes.addFlashAttribute("message", "User deleted successfully!");
+        return "redirect:/students";
+    }
 
 }

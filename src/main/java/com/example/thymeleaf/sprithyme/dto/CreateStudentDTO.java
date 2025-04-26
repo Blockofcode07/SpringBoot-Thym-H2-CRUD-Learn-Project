@@ -2,12 +2,16 @@ package com.example.thymeleaf.sprithyme.dto;
 
 import java.time.LocalDate;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
+@Getter
+@Setter
 public class CreateStudentDTO {
 
     @NotEmpty(message = "{NotEmpty.name}")
@@ -18,10 +22,10 @@ public class CreateStudentDTO {
     private String email;
 
     @NotNull(message = "{NotNull.birthday}")
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 
-    @NotEmpty(message ="{NotEmpty.street}")
+    @NotEmpty(message = "{NotEmpty.street}")
     private String street;
 
     @NotEmpty(message = "{NotEmpty.number}")
@@ -35,6 +39,5 @@ public class CreateStudentDTO {
 
     @NotEmpty(message = "{NotEmpty.state}")
     private String state;
-
 
 }

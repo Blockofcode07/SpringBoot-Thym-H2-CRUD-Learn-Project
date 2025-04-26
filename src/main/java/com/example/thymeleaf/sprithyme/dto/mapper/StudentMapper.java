@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class StudentMapper {
-    
-    public static Student toEntity(CreateStudentDTO dto){
-        Student student  = new Student();
+
+    public static Student toEntity(CreateStudentDTO dto) {
+        Student student = new Student();
         student.setName(dto.getName());
         student.setEmail(dto.getEmail());
         student.setBirthday(dto.getBirthday());
@@ -27,8 +27,9 @@ public class StudentMapper {
         address.setCity(dto.getCity());
         address.setState(dto.getState());
         address.setStudent(student);
-        
+
         student.setAddress(address);
+
         return student;
     }
 
@@ -55,3 +56,4 @@ public class StudentMapper {
     }
 
 }
+
